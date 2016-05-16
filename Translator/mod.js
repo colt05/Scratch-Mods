@@ -1,4 +1,5 @@
 (function(ext) {
+  alert("Powered by Yandex.Translate");
   function asyncgetcallback(url, reponame, returnAll, callback) {
     if (reponame === undefined) {
       reponame = "default";
