@@ -1,5 +1,6 @@
 (function(ext) {
   alert("Powered by Yandex.Translate");
+  var apikey = "trnsl.1.1.20160516T193740Z.6a606b137bf1783a.2bbc8b02f47cf36b6f38b4ef451390c118a8eee5";
   function asyncgetcallback(url, reponame, returnAll, callback) {
     if (reponame === undefined) {
       reponame = "default";
@@ -22,7 +23,6 @@
   }
 
   function translate(text, target, callback) {
-    var apikey = "trnsl.1.1.20160516T193740Z.6a606b137bf1783a.2bbc8b02f47cf36b6f38b4ef451390c118a8eee5";
     try {
       var url = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=".concat(apikey).concat("&text=").concat(text).concat("&lang=").concat(target);
       asyncgetcallback(url, "Scratch-Mods", false, function(response) {
@@ -47,17 +47,20 @@
     };
   };
 
-  ext.get_temp = function(text, language, callback) {
+  ext.translateBlock = function(text, language, callback) {
     // Yandex!
     translate(text, language, function(resultt) {
       callback(resultt);
     });
   };
-
+  ext.setApiKey = function(keyToSet) {
+    apikey = keyToSet;
+  }
   // Block and block menu descriptions
   var descriptor = {
     blocks: [
-      ['R', 'Translate %s to %s', 'get_temp', 'Hi!', 'Japanese'],
+      ['R', 'Translate %s to %s', 'translateBlock', 'Hi!', 'Japanese'],
+      [' ', 'Set API key to %s', 'setApiKey', '...']
     ]
   };
 
