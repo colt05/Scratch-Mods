@@ -81,7 +81,7 @@
       [' ', 'Set API key to %s', 'setApiKey', '...']
     ],
     menus: [
-      choice: ['Yandex.Translate', 'Google']
+      choice = ['Yandex.Translate', 'Google'] //idk
     ]
   };
 
