@@ -59,17 +59,16 @@
   };
 
   ext.translateBlock = function(text, language, choice, callback) {
-    if (choice == "Yandex.Translate") {
     // Yandex!
     translate(text, language, function(resultt) {
       callback(resultt);
     });
-    } else {
-    // Yandex!
+  };
+  ext.translateBlock = function(text, language, choice, callback) {
+    // Google!
     translateGoogle(text, language, function(resultt) {
       callback(resultt);
     });
-    }
   };
   ext.setApiKey = function(keyToSet) {
     apikey = keyToSet;
@@ -77,11 +76,9 @@
   // Block and block menu descriptions
   var descriptor = {
     blocks: [
-      ['R', 'Translate %s to %s (Powered by %m.choice)', 'translateBlock', 'Hi!', 'Japanese'],
+      ['R', 'Translate %s to %s (Powered by Yandex.Translate)', 'translateBlock', 'Hi!', 'Japanese'],
+      ['R', 'Translate %s to %s (Google Translate)', 'translateBlockGoogle', 'Hi!', 'Japanese'],
       [' ', 'Set API key to %s', 'setApiKey', '...']
-    ],
-    menus: [
-      choice = ['Yandex.Translate', 'Google'] //idk
     ]
   };
 
