@@ -33,6 +33,17 @@
       return false;
     }
   }
+  function translateGoogle(text, target, callback) {
+      try {
+       var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=" + target + "&dt=t&q=" + encodeURI(text);
+       asyncgetcallback(url, "Scratch-Mods", false, function(response) {
+        var responseparsed = JSON.parse(response);
+        callback(responseparsed.text[0][0][0]);
+      });
+    } catch (err) {
+      return false;
+    }
+  }
   // thanks https://github.com/LLK/scratchx/wiki#writing-extensions-for-scratchx
   // also thanks http://stackoverflow.com/a/26272470/3583166
   // Cleanup function when the extension is unloaded
@@ -47,11 +58,18 @@
     };
   };
 
-  ext.translateBlock = function(text, language, callback) {
+  ext.translateBlock = function(text, language, choice, callback) {
+    if (choice == "Yandex.Translate") {
     // Yandex!
     translate(text, language, function(resultt) {
       callback(resultt);
     });
+    } else {
+    // Yandex!
+    translateGoogle(text, language, function(resultt) {
+      callback(resultt);
+    });
+    }
   };
   ext.setApiKey = function(keyToSet) {
     apikey = keyToSet;
@@ -59,8 +77,11 @@
   // Block and block menu descriptions
   var descriptor = {
     blocks: [
-      ['R', 'Translate %s to %s (Powered by Yandex.Translate)', 'translateBlock', 'Hi!', 'Japanese'],
+      ['R', 'Translate %s to %s (Powered by %m.choice)', 'translateBlock', 'Hi!', 'Japanese'],
       [' ', 'Set API key to %s', 'setApiKey', '...']
+    ],
+    menus: [
+      choice: ['Yandex.Translate', 'Google']
     ]
   };
 
