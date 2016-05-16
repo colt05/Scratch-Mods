@@ -23,7 +23,7 @@
   var apikey = "trnsl.1.1.20160325T002502Z.51d6cbf6baba0fb2.0e88540fb49b9ea16737bc4619ee2c516c2ee2f4";
   try{
   var url = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=".concat(apikey).concat("&text=").concat(text).concat("&lang=").concat(target);
-  asyncgetcallback(url, "redesigned-octo-sniffle", false, function(response) {
+  asyncgetcallback(url, "Scratch-Mods", false, function(response) {
   var responseparsed = JSON.parse(response);
   callback(responseparsed.text[0]);
   });
