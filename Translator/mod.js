@@ -59,7 +59,7 @@
   // Block and block menu descriptions
   var descriptor = {
     blocks: [
-      ['R', 'Translate %s to %s', 'translateBlock', 'Hi!', 'Japanese'],
+      ['R', 'Translate %s to %s (Powered by Yandex.Translate)', 'translateBlock', 'Hi!', 'Japanese'],
       [' ', 'Set API key to %s', 'setApiKey', '...']
     ]
   };
