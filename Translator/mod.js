@@ -78,8 +78,8 @@
   var descriptor = {
     blocks: [
       ['R', 'Translate %s to %s (Powered by Yandex.Translate)', 'translateBlock', 'Hi!', 'Japanese'],
-      ['R', 'Translate %s to %s (Google Translate)', 'translateBlockGoogle', 'Hi!', 'Japanese'],
-      [' ', 'Set API key to %s', 'setApiKey', '...']
+      //['R', 'Translate %s to %s (Google Translate)', 'translateBlockGoogle', 'Hi!', 'Japanese'],
+      [' ', 'Set Yandex.Translate API key to %s', 'setApiKey', '...']
     ]
   };
 
