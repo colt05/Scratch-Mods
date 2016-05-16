@@ -21,7 +21,7 @@
   }
 
   function translate(text, target, callback) {
-    var apikey = "trnsl.1.1.20160325T002502Z.51d6cbf6baba0fb2.0e88540fb49b9ea16737bc4619ee2c516c2ee2f4";
+    var apikey = "trnsl.1.1.20160516T193740Z.6a606b137bf1783a.2bbc8b02f47cf36b6f38b4ef451390c118a8eee5";
     try {
       var url = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=".concat(apikey).concat("&text=").concat(text).concat("&lang=").concat(target);
       asyncgetcallback(url, "Scratch-Mods", false, function(response) {
