@@ -36,6 +36,7 @@
   function translateGoogle(text, target, callback) {
       try {
        var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=" + target + "&dt=t&q=" + encodeURI(text);
+       console.log(url);
        asyncgetcallback(url, "Scratch-Mods", false, function(response) {
         var responseparsed = JSON.parse(response);
         callback(responseparsed.text[0][0][0]);
