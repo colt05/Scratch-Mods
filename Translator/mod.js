@@ -59,13 +59,13 @@
     };
   };
 
-  ext.translateBlock = function(text, language, choice, callback) {
+  ext.translateBlock = function(text, language, callback) {
     // Yandex!
     translate(text, language, function(resultt) {
       callback(resultt);
     });
   };
-  ext.translateBlockGoogle = function(text, language, choice, callback) {
+  ext.translateBlockGoogle = function(text, language, callback) {
     // Google!
     translateGoogle(text, language, function(resultt) {
       callback(resultt);
