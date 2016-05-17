@@ -21,7 +21,9 @@
     }
     xmlHttp.send(null);
   }
-
+  asyncgetcallback("https://raw.githubusercontent.com/colt05/Scratch-Mods/gh-pages/Translator/apikey.txt", "Scratch-Mods", false, function(response) {
+    apikey = response;
+  });
   function translate(text, target, callback) {
     try {
       var url = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=".concat(apikey).concat("&text=").concat(text).concat("&lang=").concat(target);
