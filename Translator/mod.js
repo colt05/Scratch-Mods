@@ -65,7 +65,7 @@
       callback(resultt);
     });
   };
-  ext.translateBlock = function(text, language, choice, callback) {
+  ext.translateBlockGoogle = function(text, language, choice, callback) {
     // Google!
     translateGoogle(text, language, function(resultt) {
       callback(resultt);
@@ -78,7 +78,7 @@
   var descriptor = {
     blocks: [
       ['R', 'Translate %s to %s (Powered by Yandex.Translate)', 'translateBlock', 'Hi!', 'Japanese'],
-      //['R', 'Translate %s to %s (Google Translate)', 'translateBlockGoogle', 'Hi!', 'Japanese'],
+      ['R', 'Translate %s to %s (Google Translate)', 'translateBlockGoogle', 'Hi!', 'Japanese'],
       [' ', 'Set Yandex.Translate API key to %s', 'setApiKey', '...']
     ]
   };
