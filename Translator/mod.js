@@ -1,6 +1,6 @@
 (function(ext) {
   alert("Powered by Yandex.Translate");
-  var apikey = "trnsl.1.1.20160516T193740Z.6a606b137bf1783a.2bbc8b02f47cf36b6f38b4ef451390c118a8eee5";
+  var apikey = "";
   function asyncgetcallback(url, reponame, returnAll, callback) {
     if (reponame === undefined) {
       reponame = "default";
